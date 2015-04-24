@@ -1,9 +1,19 @@
+<!--
+<tr>
+  <td>/td>
+  <td><%= task.state %></td>
+  <td><%= link_to 'Show', task %></td>
+  <td><%= link_to 'Edit', edit_task_path(task) %></td>
+  <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <div class="panel-footer">
+  </div>
+</tr>
+-->
 <div class="panel panel-info">
   <div class="panel-heading">
-    <%= link_to edit_task_path(task) do %>
-    Created <%= time_ago_in_words(task.created_at) %> ago
-    <% end %>
+    <%= task.title %>
     <%= link_to "<i class='fa fa-times'></i>".html_safe, task, method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right"  %>
+    <%= link_to "<i class='fa fa-pencil-square-o fa-1'></i>".html_safe, edit_task_path(task), class: "pull-right" %>
   </div>
   <div class="panel-body"><%= task.content %></div>
   <div class="panel-footer text-center">
