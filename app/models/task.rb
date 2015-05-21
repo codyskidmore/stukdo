@@ -1,5 +1,9 @@
 class Task < ActiveRecord::Base
   belongs_to :user
+  validates_presence_of :user_id
+  validates_presence_of :content
+  validates_presence_of :title
+
 
   auto_html_for :content do
     html_escape
